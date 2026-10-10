@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070609" />
+  <meta name="description" content="رسالة سرية لصاحب عمري — افتح الجواب واكتشف الكلام اللي من القلب." />
+  <title>رسالة سرية | لصاحب عمري 💌</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div id="particles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الصفحة الرئيسية"><span class="brand-mark">✦</span> SECRET LETTER</a>
+    <button id="soundToggle" class="sound-toggle" type="button" aria-label="تشغيل أو إيقاف الموسيقى">
+      <span class="sound-icon">♫</span><span id="soundLabel">الصوت مقفول</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="intro" id="intro">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> رسالة اتكتبت من القلب</div>
+      <h1>في كلام…<br><span>مينفعش يتقال عادي.</span></h1>
+      <p class="intro-copy">في ناس وجودها بيخلّي الدنيا أهون، وفي كلام يستاهل يتقال بطريقة مختلفة شوية.</p>
+      <div class="hero-seal" aria-hidden="true"><span>✦</span><i></i><b>♥</b></div>
+      <p class="hint"><span class="hint-line"></span> انزل شوية… في حاجة مستنياك <span class="hint-line"></span></p>
+    </section>
+
+    <section class="letter-section" id="letterSection">
+      <div class="section-label"><span>01</span><i></i> ظرف مختوم بسرّ</div>
+      <p class="letter-caption">رسالة خاصة لشخص مش أي حد…</p>
+      <button class="envelope-button" id="openLetter" type="button" aria-label="افتح الجواب">
+        <span class="envelope-glow"></span>
+        <span class="envelope" id="envelope">
+          <span class="envelope-back"></span>
+          <span class="letter-paper">
+            <span class="paper-top">A LETTER FOR YOU</span>
+            <span class="paper-heart">♥</span>
+            <span class="paper-lines"></span>
+          </span>
+          <span class="envelope-front"></span>
+          <span class="envelope-flap"></span>
+          <span class="wax-seal" id="waxSeal"><span>♥</span></span>
+          <span class="envelope-spark spark-a">✦</span><span class="envelope-spark spark-b">✧</span>
+        </span>
+      </button>
+      <p class="tap-text" id="tapText"><span class="pulse-dot"></span> دوس على الجواب عشان تفتحه</p>
+      <p class="tiny-note">خد نفس… واقرأ الكلام براحتك 🤍</p>
+    </section>
+
+    <section class="message-section" id="messageSection" aria-live="polite" hidden>
+      <div class="section-label"><span>02</span><i></i> من القلب للقلب</div>
+      <div class="message-card">
+        <div class="card-corner corner-tr">✧</div><div class="card-corner corner-bl">✧</div>
+        <div class="letter-heading"><span class="heading-icon">♥</span><span>إلى صاحب عمري</span><span class="heading-icon">♥</span></div>
+        <div class="gold-rule"><span>✦</span></div>
+        <div class="message-text" id="messageText"></div>
+        <div class="signature" id="signature" hidden>
+          <span class="signature-line"></span>
+          <span>من قلب بيقدّرك… دايمًا 🤍</span>
+        </div>
+        <button class="reveal-button" id="extraButton" type="button">لسه في كلام مستخبي <span>✦</span></button>
+        <div class="extra-message" id="extraMessage" hidden>
+          <div class="extra-icon">🫂</div>
+          <p>ولو الأيام شغلتنا، أو المسافات كبرت، أو كل واحد فينا دخل في دوشة حياته… افتكر إن في ناس وجودها مش بيتقاس بعدد الكلام ولا بكتر المقابلات. وإنت من الناس اللي ليها مكانة حلوة، ومش محتاجة تثبتها كل يوم.</p>
+          <span>خليك دايمًا بخير يا صاحبي. ♥</span>
+        </div>
+        <div class="quiz-divider"><span>✦</span><span>طب ورّيني بقى إنت تعرفني قد إيه 😂❤️</span><span>✦</span></div>
+        <section class="friend-quiz" id="friendQuiz">
+          <p class="quiz-intro">طلعت غالي عليك فعلًا 😂<br><strong>حبيب/ة قلبي 😘</strong><br>لو فعلًا بقى كده، جاوب على الأسئلة دي من قلبك 😉</p>
+          <div class="quiz-list">
+            <label class="quiz-question"><span><b>01</b> ابعتلي كلمة أنا دايمًا بقولها</span><input type="text" data-answer="1" placeholder="اكتب إجابتك هنا…"></label>
+            <label class="quiz-question"><span><b>02</b> إيه هي أكتر أكلة أنا بحبها؟</span><input type="text" data-answer="2" placeholder="اكتب إجابتك هنا…"></label>
+            <label class="quiz-question"><span><b>03</b> إيه أكتر مجال أنا بحبه؟</span><input type="text" data-answer="3" placeholder="اكتب إجابتك هنا…"></label>
+            <label class="quiz-question"><span><b>04</b> يوم ميلادي إيه؟</span><input type="text" data-answer="4" placeholder="اليوم / الشهر"></label>
+            <label class="quiz-question"><span><b>05</b> لو خرجنا مع بعض، هتشربني إيه اللي أنا بحبه؟ 😂😉</span><input type="text" data-answer="5" placeholder="مشروبك المفضل…"></label>
+            <label class="quiz-question"><span><b>06</b> لو قارنوني بين الآيفون والأندرويد، تفتكر هختار إيه؟ لو إنت قريب مني هتعرف 📱</span><input type="text" data-answer="6" placeholder="آيفون ولا أندرويد؟"></label>
+            <label class="quiz-question"><span><b>07</b> لو قارنوك بيني وبين أعز صاحب عندك، هتختار إيه؟</span><input type="text" data-answer="7" placeholder="قول اللي في قلبك…"></label>
+            <label class="quiz-question"><span><b>08</b> لو كان آخر يوم ليا في الحياة وإنت معايا، إيه الاعتراف اللي ممكن تعترفهولي قبل ما أموت؟</span><textarea data-answer="8" rows="3" placeholder="اكتب اعترافك بصراحة…"></textarea></label>
+            <label class="quiz-question"><span><b>09</b> بتحبني بنسبة كام ٪؟ ❤️</span><input type="text" data-answer="9" placeholder="اكتب النسبة…"></label>
+            <label class="quiz-question"><span><b>10</b> إيه أكتر حاجة حبّبتك فيّا؟</span><textarea data-answer="10" rows="3" placeholder="قولّي أكتر حاجة…"></textarea></label>
+          </div>
+          <button class="quiz-submit" id="quizSubmit" type="button">خلصت إجابات… ورّيني النتيجة 😂 <span>♥</span></button>
+          <div class="quiz-result" id="quizResult" hidden></div>
+          <p class="quiz-footnote">مفيش إجابات صح وغلط هنا… دي لعبة بين الصحاب، والأهم الصراحة والمحبة ❤️</p>
+        </section>
+        <div class="card-footer"><span>كلام بسيط… ومكانة كبيرة</span><span>✦ ✦ ✦</span></div>
+      </div>
+      <button class="restart-button" id="restartButton" type="button">اقفل الرسالة وارجع للبداية ↺</button>
+    </section>
+
+    <section class="closing" id="closing">
+      <span class="closing-star">✧</span>
+      <p>مش كل رسالة بتتكتب بالحبر…</p>
+      <p class="closing-emphasis">في رسائل مكانها القلب. <span>♥</span></p>
+      <span class="closing-sub">اتعملت مخصوص عشان تقولك: إنت غالي يا صاحبي.</span>
+    </section>
+  </main>
+
+  <footer><span>MADE WITH</span> <span class="footer-heart">♥</span> <span>AND A LITTLE MAGIC</span></footer>
+  <button id="secretButton" class="secret-button" type="button" aria-label="سر صغير">✦</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <audio id="ambientAudio" loop preload="none">
+    <!-- ضع ملف موسيقى هادئة باسم music.mp3 داخل نفس المجلد لتفعيل الموسيقى -->
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>
